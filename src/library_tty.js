@@ -77,6 +77,9 @@ addToLibrary({
           if (result === null || result === undefined) break;
           bytesRead++;
           buffer[offset+i] = result;
+          if(result == 10) {
+              break;
+          } 
         }
         if (bytesRead) {
           stream.node.timestamp = Date.now();
